@@ -1,0 +1,81 @@
+/* google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* CSS variables */
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Nunito', sans-serif;
+    --font-tertiary: 'Open Sans', sans-serif;
+    --font-quaternary: 'Work Sans', sans-serif;
+    --primary-color: #79A7D3; /*soft blue*/
+    --secondary-color: #A8E6CF; /*mint*/
+    --accent-color: #FF6B6B; /*coral*/
+    --text-color: #333333; /*charcoal*/
+}
+
+/* Base font for body */
+body {
+    font-family: var(--font-tertiary);
+    color: var(--text-color);
+}
+
+/* Header and navbar brand use the primary font */
+header, .navbar-brand, h2 {
+    font-family: var(--font-primary);
+}
+
+.navbar-brand {
+    font-weight: 1000;
+   }
+
+/* Navbar background and readable link colors */
+.navbar {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.2rem 0.5rem;
+}
+
+/* !important so the navbar shows the intended soft-blue background. */
+nav.navbar, .navbar.bg-body-tertiary {
+    background-color: var(--primary-color) !important;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #ffffff;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: rgba(255,255,255,0.95);
+    text-decoration: none;
+}
+
+.navbar .navbar-toggler {
+    border-color: rgba(255,255,255,0.2);
+}
+
+.navbar .navbar-toggler-icon {
+    filter: invert(1) brightness(2);
+}
+
+header h1 {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin: 0.25rem 0;
+}
+
+/* Small visual spacing for the right button */
+.navbar .btn {
+    margin-right: 0.5rem;
+}
+
+.btn-danger {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
