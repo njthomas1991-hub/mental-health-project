@@ -62,11 +62,14 @@ nav.navbar, .navbar.bg-body-tertiary {
     filter: invert(1) brightness(2);
 }
 
-header h1 {
+/* Page title styling: centered and using the secondary font */
+header h1,
+main h1 {
     font-family: var(--font-secondary);
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1.8rem;
     margin: 0.25rem 0;
+    text-align: center;
 }
 
 /* Small visual spacing for the right button */
@@ -77,5 +80,61 @@ header h1 {
 .btn-danger {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
+}
+
+/* Hero image section
+   - Use an inline <img> on small screens so the image is fluid (width:100%).
+   - Use a background image with overlay on screens >= 768px so text overlays the image.
+*/
+.hero {
+    color: #ffffff;
+    display: block;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero .hero-content {
+    padding: 2.5rem 1rem;
+}
+
+.hero h1 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: 0.5rem;
+    color: inherit;
+}
+
+.hero .lead {
+    font-size: 1.125rem;
+    opacity: 0.95;
+    color: inherit;
+}
+
+/* Media query for medium screens and larger */
+@media (min-width: 768px) {
+    .hero {
+        background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('../images/hero.jpg') center/cover no-repeat;
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        color: #ffffff;
+    }
+
+    /* hide the inline img at md+ to prevent duplicate images */
+    .hero-img {
+        display: none;
+    }
+
+    .hero .hero-content { padding: 3rem 1rem; }
+
+    @media (min-width: 992px) {
+        .hero { min-height: 70vh; }
+        .hero h1 { font-size: 3rem; }
+    }
 }
 
