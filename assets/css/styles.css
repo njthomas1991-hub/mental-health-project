@@ -10,133 +10,109 @@
     --font-secondary: 'Nunito', sans-serif;
     --font-tertiary: 'Open Sans', sans-serif;
     --font-quaternary: 'Work Sans', sans-serif;
-    --primary-color: #79A7D3; /*soft blue*/
-    --secondary-color: #A8E6CF; /*mint*/
-    --accent-color: #FF6B6B; /*coral*/
-    --text-color: #333333; /*charcoal*/
-    --navbar-height: 85px;
+    --color-primary: #79a7d3 /*softblue*/;
+    --color-secondary: a8e6cf /*mintgreen*/;
+    --accent-color: #c7ceea /*lavender*/;
+    --accent-color-dark: darkblue /*darkblue*/;
+    --danger-btn: #ff6b6b /*coral*/;
+    --text-color: #333333 /*darkgray*/;
+    --navbar-height: 74px;
+    --hero-gap: 1rem;
+
+    /*navbar styles*/
+nav {
+    color: white;
 }
 
-/* Base font for body */
-body {
-    font-family: var(--font-tertiary);
-    color: var(--text-color);
-    padding-top: calc(var(--navbar-height) + 5px)
-}
-
-navbar {
-    position: fixed;
-    background-color: var(--primary-color);
-    color: #ffffff;
-    padding: 0.2rem 0.5rem;
-}
-
-
-/* Header and navbar brand use the primary font */
-header, .navbar-brand, h2 {
-    font-family: var(--font-primary);
-}
-
-.navbar-brand {
-    font-weight: 1000;
-   }
-
-/* Navbar background and readable link colors */
-.navbar {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    padding: 0.2rem 0.5rem;
-}
-
-/* !important so the navbar shows the intended soft-blue background. */
-nav.navbar, .navbar.bg-body-tertiary {
-    background-color: var(--primary-color) !important;
-}
-
-.navbar .navbar-brand,
-.navbar .nav-link {
-    color: #ffffff;
-}
-
-.navbar .nav-link:hover,
-.navbar .nav-link:focus {
-    color: rgba(255,255,255,0.95);
-    text-decoration: none;
-}
-
-.navbar .navbar-toggler {
-    border-color: rgba(255,255,255,0.2);
-}
-
-.navbar .navbar-toggler-icon {
-    filter: invert(1) brightness(2);
-}
-
-/* Page title styling: centered and using the secondary font */
-header h1,
-main h1 {
-    font-family: var(--font-secondary);
-    font-weight: 800;
-    font-size: 1.8rem;
-    margin: 0.25rem 0;
-    text-align: center;
-}
-
-.navbar {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    padding: 0.2rem 0.5rem;
-}
-
-/* Small visual spacing for the right button */
-.navbar .btn {
-    margin-right: 0.5rem;
-}
-
+/*emergency help button styles*/
 .btn-danger {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-    color:rgb(255, 213, 0); /* yellow text */
-}
+    --bs-btn-color: var(--danger-btn);
+    color: #f7ad33; /* yellow text */
+    }
 
-/* Hero image section
-   - Use an inline <img> on small screens so the image is fluid (width:100%).
-   - Use a background image with overlay on screens >= 768px so text overlays the image.
-*/
-.hero {
-    color: #ffffff;
-    display: block;
-}
+    
+    /* card styles */
+    body {
+        font-family: var(--font-tertiary);
+        background: #F8F9FB;
+        margin: 0;
+        padding: 0;
+        color: var(--text-color);
+    }
 
-.hero-img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+    /* Ensure header/nav span full width */
+    header { width: 100%; }
+    .navbar { width: 100%; }
 
-.hero .hero-content {
-    padding: 2.5rem 1rem;
-}
+    .card {
+        background: white;
+        width: 100%;
+        max-width: 320px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 1px solid #e8eef5;
+    }
+    .card h3 {
+        font-size: 1.3rem;
+        margin: 0;
+        color: #4A6FA5;
+    }
+    .card p {
+        margin: 0;
+        line-height: 1.5;
+        color: #333;
+    }
+    .tag {
+        background: #DDE9F8;
+        color: #4A6FA5;
+        font-size: 0.8rem;
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-weight: 600;
+    }
 
-.hero h1 {
-    font-family: var(--font-primary);
-    font-weight: 700;
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    margin-bottom: 0.5rem;
-    margin: 90px 0 0 0;
-    color: inherit;
-}
+    /* Make cards uniform height across the grid */
+    .container .row > [class*="col-"] {
+        display: flex;
+    }
+    .card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    .card .card-body {
+        flex: 1 1 auto;
+    }
 
-.hero .lead {
-    font-size: 1.125rem;
-    opacity: 0.95;
-    color: inherit;
-}
+    /* media queary for medium screens: spacing for the stacked hero (image above content) */
+    @media (min-width: 768px) {
+        .hero .hero-content { padding: 3rem 1rem; }
+        .hero-img {
+            width: 100%;
+            height: 60vh; /* visible height on md screens */
+            object-fit: cover;
+            display: block;
+            margin: 0;
+        }
+    }
+/*media query for larger screens*/
+    @media (min-width: 992px) {
+        .hero .hero-content { padding: 4rem 1rem; }
+        .hero-img { height: 90vh; margin: 0; }
+        .hero h1 { font-size: 3rem; }
+    }
 
-/* Offset anchored sections for fixed navbar so headings are visible when linked */
-section[id], [id] {
-    scroll-margin-top: var(--navbar-height);
-}
+    }
+
+    /* keep a small consistent gap on mobile */
+    main { padding-top: var(--hero-gap); }
+
 
 /* Emergency help section styles */
 .emergency-help-header {
@@ -197,26 +173,26 @@ section[id], [id] {
 /* Optional utility for smaller, denser coral boxes */
 .coral-box--small { padding: 0.75rem 1rem; }
 
-/* Card component styles */
+/* card styles */
 body {
-font-family: 'Nunito', sans-serif;
-background: #F8F9FB;
-padding: 40px;
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
-justify-content: center;
+    font-family: var(--secondary);
+    background: #F8F9FB;
+    padding:40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
+
 .card {
-background: white;
-width: 280px;
-padding: 20px;
-border-radius: 20px;
-box-shadow: 0 6px 12px rgba(0,0,0,0.05);
-display: flex;
-flex-direction: column;
-gap: 10px;
-border: 2px solid #e8eef5;
+    background: white;
+    width: 280px;
+        padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 2cap solid #e8eef5;
 }
 .card h3 {
 font-size: 1.3rem;
@@ -227,15 +203,6 @@ color: #4A6FA5;
 margin: 0;
 line-height: 1.5;
 color: #333;
-}
-.tag {
-background: #DDE9F8;
-color: #4A6FA5;
-font-size: 0.8rem;
-display: inline-block;
-padding: 4px 10px;
-border-radius: 12px;
-font-weight: 600;
 }
 
   /* Make cards uniform height across the grid */
@@ -260,34 +227,30 @@ font-weight: 600;
     /* Keep the inline hero image visible on all sizes.
        On md+ screens set a responsive height so the image sits below the navbar
        and scales while preserving aspect ratio using object-fit. */
-    .hero .hero-content { padding: 3rem 1rem; }
+    .hero .hero-content { 
+        padding: 3rem 1rem; 
+    }
+    
     .hero-img {
         width: 100%;
         height: 60vh; /* visible height on md screens */
         object-fit: cover;
         display: block;
-        margin: 5px 0 0 0;
+        margin: 0;
     }
 }
 
-@media (min-width: 992px) {
-    .hero .hero-content { padding: 4rem 1rem; }
-    .hero-img { height: 90vh; margin:20px 0 0 0; }
-    .hero h1 { font-size: 3rem; }
+/* Danger button override: coral background + yellow text */
+.btn-danger {
+    background-color: #FF6B6B !important; /* coral */
+    color: #FFD500 !important; /* yellow */
+    border-color: #e55a5a !important;
 }
-
-/* Small-screen (sm) spacer/border between fixed navbar and hero
-   - Adds a 5px visible separator and pushes the hero below the fixed navbar. */
-@media (max-width: 575.98px) {
-    .hero {
-        margin-top: calc(var(--navbar-height) + 1px);
-        border-top: o.5px solid rgba(0,0,0,0.08); /* adjust color as needed */
-    }
-
-    /* Ensure the inline hero image aligns with the new spacing */
-    .hero-img {
-        display: block;
-    }
+.btn-danger:hover,
+.btn-danger:focus {
+    background-color: #ff534e !important;
+    color: #FFF200 !important;
+    border-color: #d24b4b !important;
 }
 
 
