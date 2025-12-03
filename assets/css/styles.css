@@ -21,7 +21,16 @@
 body {
     font-family: var(--font-tertiary);
     color: var(--text-color);
+    padding-top: calc(var(--navbar-height) + 5px)
 }
+
+navbar {
+    position: fixed;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.2rem 0.5rem;
+}
+
 
 /* Header and navbar brand use the primary font */
 header, .navbar-brand, h2 {
@@ -71,6 +80,12 @@ main h1 {
     font-size: 1.8rem;
     margin: 0.25rem 0;
     text-align: center;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.2rem 0.5rem;
 }
 
 /* Small visual spacing for the right button */
