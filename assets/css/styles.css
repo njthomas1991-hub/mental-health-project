@@ -22,6 +22,10 @@
     /*navbar styles*/
 nav {
     color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030; /* Ensure navbar is above other content */
 }
 
 /*emergency help button styles*/
@@ -30,7 +34,8 @@ nav {
     color: #f7ad33; /* yellow text */
     }
 
-    
+    /*hero section styles*/
+ 
     /* card styles */
     body {
         font-family: var(--font-tertiary);
@@ -104,7 +109,7 @@ nav {
 /*media query for larger screens*/
     @media (min-width: 992px) {
         .hero .hero-content { padding: 4rem 1rem; }
-        .hero-img { height: 90vh; margin: 0; }
+        .hero-img { height: 60vh; margin: 0; }
         .hero h1 { font-size: 3rem; }
     }
 
@@ -253,5 +258,25 @@ color: #333;
     border-color: #d24b4b !important;
 }
 
+/* Media queries */
 
+/* Medium screens: stacked hero spacing and hero image behavior */
+@media (min-width: 768px) {
+    .hero .hero-content {
+        padding: 3rem 1rem;
+    }
+    .hero-img {
+        width: 100%;
+        height: 60vh; /* visible height on md screens */
+        object-fit: cover;
+        display: block;
+        margin: 0;
+    }
+}
 
+/* Larger screens */
+@media (min-width: 992px) {
+    .hero .hero-content { padding: 4rem 1rem; }
+    .hero-img { height: 60vh; margin: 0; }
+    .hero h1 { font-size: 3rem; }
+}
