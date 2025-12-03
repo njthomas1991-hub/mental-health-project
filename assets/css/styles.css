@@ -14,6 +14,7 @@
     --secondary-color: #A8E6CF; /*mint*/
     --accent-color: #FF6B6B; /*coral*/
     --text-color: #333333; /*charcoal*/
+    text-align: center;
 }
 
 /* Base font for body */
@@ -114,6 +115,63 @@ main h1 {
     opacity: 0.95;
     color: inherit;
 }
+/* Card component styles */
+body {
+font-family: 'Nunito', sans-serif;
+background: #F8F9FB;
+padding: 40px;
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+}
+.card {
+background: white;
+width: 280px;
+padding: 20px;
+border-radius: 20px;
+box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+display: flex;
+flex-direction: column;
+gap: 10px;
+border: 2px solid #e8eef5;
+}
+.card h3 {
+font-size: 1.3rem;
+margin: 0;
+color: #4A6FA5;
+}
+.card p {
+margin: 0;
+line-height: 1.5;
+color: #333;
+}
+.tag {
+background: #DDE9F8;
+color: #4A6FA5;
+font-size: 0.8rem;
+display: inline-block;
+padding: 4px 10px;
+border-radius: 12px;
+font-weight: 600;
+}
+
+  /* Make cards uniform height across the grid */
+    /* Ensure each column behaves as a flex container so .card.h-100 fills the column */
+    .container .row > [class*="col-"] {
+        display: flex;
+    }
+    
+    .card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .card .card-body {
+        flex: 1 1 auto;
+    }
 
 /* Media query for medium screens and larger */
 @media (min-width: 768px) {
@@ -131,8 +189,8 @@ main h1 {
     }
 
     .hero .hero-content { padding: 3rem 1rem; }
-
-    @media (min-width: 992px) {
+    
+      @media (min-width: 992px) {
         .hero { min-height: 70vh; }
         .hero h1 { font-size: 3rem; }
     }
