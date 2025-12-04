@@ -11,7 +11,7 @@
     --font-tertiary: 'Open Sans', sans-serif;
     --font-quaternary: 'Work Sans', sans-serif;
     --color-primary: #79a7d3 /*softblue*/;
-    --color-secondary: a8e6cf /*mintgreen*/;
+    --color-secondary: #a8e6cf; /* mintgreen */
     --accent-color: #c7ceea /*lavender*/;
     --accent-color-dark: darkblue /*darkblue*/;
     --danger-btn: #ff6b6b /*coral*/;
@@ -28,13 +28,58 @@ nav {
     z-index: 1030; /* Ensure navbar is above other content */
 }
 
+.navbar {
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 70px;
+    background-color: #79a7d3; /* soft blue */          
+    z-index: 1030; /* Ensure navbar is above other content */
+    border-bottom: 2px solid #4A6FA5;
+}
+
+/*create space below navbar*/
+body {
+   margin: 0;
+   padding-top:20px;
+}
+
+/*hero image container*/
+.hero {
+    width:100%;
+    border-top: 10px solid #4A6FA5;
+}
+
+/*hero image*/
+.hero-img {
+    width: 100%;
+    max-height: 60vh;
+    display: block;
+   
+}
+
+/*title styles*/
+#page-title {
+    font-family: var(--font-primary);
+    font-weight: 800;
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+/*sub-header styles*/
+.sub-header { 
+    font-family: var(--font-secondary);
+    font-weight: 500;
+  
+}
 /*emergency help button styles*/
 .btn-danger {
     --bs-btn-color: var(--danger-btn);
     color: #f7ad33; /* yellow text */
     }
-
-    /*hero section styles*/
  
     /* card styles */
     body {
@@ -94,6 +139,69 @@ nav {
     .card .card-body {
         flex: 1 1 auto;
     }
+
+    /*accordion styles*/
+    .accordion-body,
+    .accordion-content {
+  background-color: var(--accent-color);
+ 
+}
+
+/* Apply Nunito */
+#habitAccordion,
+#habitAccordion * {
+  font-family: 'Nunito', sans-serif;
+}
+
+/* HEADER (Soft blue) */
+.accordion-button {
+  background-color: #b7d8ff;      /* soft blue */
+  color: #003366;
+  font-weight: 600;
+  justify-content: center;        /* real centering */
+  position: relative;
+}
+
+/* Fix the arrow so centering works */
+.accordion-button::after {
+  position: absolute;
+  right: 1rem;
+  margin-left: 0;
+}
+
+/* Hover effect for header */
+.accordion-button:hover {
+  background-color: #a6cfff;      /* slightly darker soft blue */
+  color: #00284d;
+}
+
+/* Open (active) state keeps it soft blue */
+.accordion-button:not(.collapsed) {
+  background-color: var(--color-primary); /* soft blue */
+  color: #00284d;
+  box-shadow: none;
+}
+
+/* PANELS (Lavender) */
+.accordion-body {
+  background-color: var(--accent-color);     /* soft lavender */
+  color: #333;
+  border-top: 1px solid #d3c8ff;
+}
+
+/* Optional: subtle hover inside panel */
+.accordion-body:hover {
+  background-color: #e0d8ff;
+}
+
+.accordion-button,
+.accordion-body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+i.fa-solid, i.fa {
+  font-family: "Font Awesome 6 Free" !important;
+}
 
     /* media queary for medium screens: spacing for the stacked hero (image above content) */
     @media (min-width: 768px) {
@@ -258,6 +366,16 @@ color: #333;
     border-color: #d24b4b !important;
 }
 
+/* Center all text globally, but keep form controls readable (left-aligned) */
+html, body {
+    text-align: center !important;
+}
+
+/* Keep form inputs, textareas and selects left-aligned for usability */
+input, textarea, select, .form-control {
+    text-align: left !important;
+}
+
 /* Media queries */
 
 /* Medium screens: stacked hero spacing and hero image behavior */
@@ -273,7 +391,6 @@ color: #333;
         margin: 0;
     }
 }
-
 /* Larger screens */
 @media (min-width: 992px) {
     .hero .hero-content { padding: 4rem 1rem; }
