@@ -48,7 +48,7 @@
     </style>
   </head>
 
-  <body>
+  <body class ="d-flex flex-column min-vh-100">
     <header>
      <!--navbar-->
 <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #79a7d3; position:fixed; top:0; left:0; width:100%; z-index:1030;" data-bs-theme="light">
@@ -91,7 +91,7 @@
 </nav>
     </header>
     
-<main>
+<main class="flex-grow-1">
 <!--hero image-->
 <section id="hero-image" class="hero">
   <div class="container">
@@ -104,38 +104,30 @@
     </section>
 
       <!-- emergency help section-->
-      <section id="getemergencyhelpnow">
-        <div class="container">
-            <div class="col text-center">
-              <div class="coral-box">
-                <h1 class="emergency-help-header"><i class="fa-solid fa-tower-broadcast"></i>Need Immediate Help?</h1>
-                <h2 class="emergency-help-subheader">
-                  If your life is at risk right now
-                </h2>
-                <h3 class="emergency-help-subheader">
-                  You are not alone. We are here to Help.
-                </h3>
-                <h4 class="emergency-help-text">
-                  If you feel like you might attempt suicide, or may have
-                  seriously harmed yourself, you need urgent medical help.
-                  Please:</h4>
-                  <ul>
-                    <li>Call 999 for an ambulance</li>
-                    <li>Go straight to A&E, if you can</li>
-                    <li>
-                      Call your local crisis team, if you have their number
-                    </li>
-                    <li>
-                      If you can't do this by yourself, ask someone to help you.
-                    </li>
-                  </ul>
-                 <h4>Mental health emergencies are serious. You're not wasting
-                  anyone's time.
-                </h4>
-              </div>
-            </div>
-          </div>
-      </section>
+<!-- Emergency Help Section -->
+<section id="getemergencyhelpnow">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10">
+      <div class="coral-box">
+        <h1 class="emergency-help-header"><i class="fa-solid fa-tower-broadcast"></i> Need Immediate Help?</h1>
+        <h2 class="emergency-help-subheader">If your life is at risk right now</h2>
+        <h3 class="emergency-help-subheader">You are not alone. We are here to Help.</h3>
+        <h4 class="emergency-help-text">If you feel like you might attempt suicide, or may have seriously harmed yourself, you need urgent medical help. Please:</h4>
+        <ul class="emergency-help-list">
+          <li>Call 999 for an ambulance</li>
+          <li>Go straight to A&E, if you can</li>
+          <li>Call your local crisis team, if you have their number</li>
+          <li>If you can't do this by yourself, ask someone to help you.</li>
+        </ul>
+        <h4>Mental health emergencies are serious. You're not wasting anyone's time.</h4>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       <!-- understanding emotions-->
       <section id="understanding-emotions">
@@ -681,17 +673,31 @@
       <!-- Footer -->
 
 <footer class="footer">
-  <div class="d-flex justify-content-between align-items-center flex-wrap">
-      <span class="footer-brand">Calm cloud</span>
-      <div class="footer-links">
-        <a href="#" class="footer-link"><i class="fa-brands fa-instagram"></i>Instagram</a>
-        <a href="#" class="footer-link"><i class="fa-brands fa-tiktok"></i>ticktok</a>
-        <a href="#" class="footer-link"><i class="fa-brands fa-youtube"></i>youtube</a>
-        <a href="#" class="footer-link"><i class="fa-brands fa-snapchat"></i>snapchat</a>
-      </div>
+  <div class="footer-inner container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <!-- Brand -->
+    <span class="footer-brand fs-5 fw-bold mb-2 mb-md-0">Calm Cloud</span>
+
+    <!-- Social Links as buttons -->
+    <div class="footer-links d-flex gap-2 flex-wrap justify-content-center">
+      <a href="#" class="btn btn-primary btn-sm d-flex align-items-center">
+        <i class="fa-brands fa-instagram me-1"></i> Instagram
+      </a>
+      <a href="#" class="btn btn-primary btn-sm d-flex align-items-center">
+        <i class="fa-brands fa-tiktok me-1"></i> TikTok
+      </a>
+      <a href="#" class="btn btn-primary btn-sm d-flex align-items-center">
+        <i class="fa-brands fa-youtube me-1"></i> YouTube
+      </a>
+      <a href="#" class="btn btn-primary btn-sm d-flex align-items-center">
+        <i class="fa-brands fa-snapchat me-1"></i> Snapchat
+      </a>
     </div>
-    <p class="footer-copy">&copy; 2025 Sample Page. All rights reserved.</p>
-  </footer>
+  </div>
+
+  <!-- Footer Copy -->
+  <p class="footer-copy text-center mt-3 mb-0">&copy; 2025 Calm Cloud. All rights reserved.</p>
+</footer>
+
     
       <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

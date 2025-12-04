@@ -1,452 +1,296 @@
-/* google fonts import */
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* CSS variables */
+/* CSS Variables */
 :root {
     --font-primary: 'Poppins', sans-serif;
     --font-secondary: 'Nunito', sans-serif;
     --font-tertiary: 'Open Sans', sans-serif;
     --font-quaternary: 'Work Sans', sans-serif;
-    --color-primary: #79a7d3 /*softblue*/;
-    --color-secondary: #a8e6cf; /* mintgreen */
-    --accent-color: #c7ceea /*lavender*/;
-    --accent-color-dark: darkblue /*darkblue*/;
-    --danger-btn: #ff6b6b /*coral*/;
-    --text-color: #333333 /*darkgray*/;
+
+    --color-primary: #79a7d3; /* soft blue */
+    --color-secondary: #a8e6cf; /* mint green */
+    --accent-color: #c7ceea; /* lavender */
+    --accent-color-dark: darkblue;
+    --danger-btn: #ff6b6b; /* coral */
+    --text-color: #333333;
+
     --navbar-height: 74px;
     --hero-gap: 1rem;
+    --bs-primary: #79a7d3;
 }
 
-    /*navbar styles*/
+/* Global Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-tertiary);
+    background: #F8F9FB;
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+}
 
+/* Navbar */
 .navbar {
-    position:fixed;
-    top:0;
-    left:0;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 70px;
-    background-color: #79a7d3; /* soft blue */          
-    z-index: 1030; /* Ensure navbar is above other content */
+    background-color: var(--color-primary);
+    z-index: 1030;
     border-bottom: 2px solid #4A6FA5;
-    color:white
+    color: white;
 }
 
-/*create space below navbar*/
+/* Space below navbar */
 body {
-   margin: 0;
-   padding-top:20px;
+    padding-top: 20px;
 }
 
-/*hero image container*/
+/* Hero Section */
 .hero {
-    width:100%;
-    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
-
-/*hero image*/
 .hero-img {
     width: 100%;
     max-height: 60vh;
+    object-fit: cover;
     display: block;
-   
+    margin: 0;
+}
+.hero-content {
+    padding: 2rem 1rem;
+}
+@media (min-width: 768px) {
+    .hero .hero-content {
+        padding: 3rem 1rem;
+    }
+    .hero-img {
+        height: 60vh;
+    }
+}
+@media (min-width: 992px) {
+    .hero .hero-content {
+        padding: 4rem 1rem;
+    }
+    .hero-img {
+        height: 60vh;
+    }
 }
 
-/*title styles*/
+/* Page title */
 #page-title {
     font-family: var(--font-primary);
     font-weight: 800;
     font-size: 2.5rem;
     margin: 1rem 0;
     color: var(--color-primary);
-    text-align: center;
 }
 
-/*sub-header styles*/
-.sub-header { 
+/* Sub-header */
+.sub-header {
     font-family: var(--font-secondary);
     font-weight: 500;
-  
-}
-/*emergency help button styles*/
-.btn-danger {
-    --bs-btn-color: var(--danger-btn);
-    color: #f7ad33; /* yellow text */
-    }
- 
-    /* Add vertical spacing between sections */
-section {
-    padding: 4rem 1rem; /* top and bottom padding */
 }
 
-/* Optional: smaller spacing for mobile screens */
+/* Sections */
+section {
+    padding: 4rem 1rem;
+}
 @media (max-width: 768px) {
     section {
         padding: 2rem 1rem;
     }
 }
 
-    /* card styles */
-    body {
-        font-family: var(--font-tertiary);
-        background: #F8F9FB;
-        margin: 0;
-        padding: 0;
-        color: var(--text-color);
-    }
-
-    /* Ensure header/nav span full width */
-    header { width: 100%; }
-    .navbar { width: 100%; }
-
-    .card {
-        background: white;
-        width: 100%;
-        max-width: 320px;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.05);
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        border: 1px solid #e8eef5;
-    }
-    .card h3 {
-        font-size: 1.3rem;
-        margin: 0;
-        color: #4A6FA5;
-    }
-    .card p {
-        margin: 0;
-        line-height: 1.5;
-        color: #333;
-    }
-    .tag {
-        background: #DDE9F8;
-        color: #4A6FA5;
-        font-size: 0.8rem;
-        display: inline-block;
-        padding: 4px 10px;
-        border-radius: 12px;
-        font-weight: 600;
-    }
-
-    /* Make cards uniform height across the grid */
-    .container .row > [class*="col-"] {
-        display: flex;
-    }
-    .card {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
-    }
-    .card .card-body {
-        flex: 1 1 auto;
-    }
-
-    /*accordion styles*/
-    .accordion-body,
-    .accordion-content {
-  background-color: var(--accent-color);
- 
-}
-
-/* Apply Nunito */
-#habitAccordion,
-#habitAccordion * {
-  font-family: 'Nunito', sans-serif;
-}
-
-/* HEADER (Soft blue) */
-.accordion-button {
-  background-color: #b7d8ff;      /* soft blue */
-  color: #003366;
-  font-weight: 600;
-  justify-content: center;        /* real centering */
-  position: relative;
-}
-
-/* Fix the arrow so centering works */
-.accordion-button::after {
-  position: absolute;
-  right: 1rem;
-  margin-left: 0;
-}
-
-/* Hover effect for header */
-.accordion-button:hover {
-  background-color: #a6cfff;      /* slightly darker soft blue */
-  color: #00284d;
-}
-
-/* Open (active) state keeps it soft blue */
-.accordion-button:not(.collapsed) {
-  background-color: var(--color-primary); /* soft blue */
-  color: #00284d;
-  box-shadow: none;
-}
-
-/* PANELS (Lavender) */
-.accordion-body {
-  background-color: var(--accent-color);     /* soft lavender */
-  color: #333;
-  border-top: 1px solid #d3c8ff;
-}
-
-/* Optional: subtle hover inside panel */
-.accordion-body:hover {
-  background-color: #e0d8ff;
-}
-
-.accordion-button,
-.accordion-body {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-i.fa-solid, i.fa {
-  font-family: "Font Awesome 6 Free" !important;
-}
-
-/*bootstrap list*/
- /* Center the content in list-group-item */
-  .list-group-item {
-    justify-content: center; /* Center horizontally */
-    text-align: center;      /* Center text inside the divs */
-  }
-
-  /* Optional: stack icon above text */
-  .list-group-item .bi {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  /* Center the inner div text */
-  .list-group-item div {
-    text-align: center;
-  }
-
-  /* Make the page allow a sticky footer without altering layout */
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-
-/* Your main/page content grows to fill space */
-main {
-  flex: 1;
-}
-
-/* Footer stretches full width and sticks to bottom */
-footer.footer {
-  width: 100%;
-  background-color: #79a7d3; /* soft blue */
-  padding: 1rem 0;
-  color: #fff;
-  box-sizing: border-box;
-}
-
-/* Keep your inner content centered but allow full-width background */
-footer .footer-inner {
-  max-width: 1200px;    /* optional: keeps content nicely aligned */
-  margin: 0 auto;       /* centers inner content while bg stays full width */
-  padding: 0 1rem;
-}
-
-
-/* media queries */
-    /* media queary for medium screens: spacing for the stacked hero (image above content) */
-    @media (min-width: 768px) {
-        .hero .hero-content { padding: 3rem 1rem; }
-        .hero-img {
-            width: 100%;
-            height: 60vh; /* visible height on md screens */
-            object-fit: cover;
-            display: block;
-            margin: 0;
-        }
-    }
-/*media query for larger screens*/
-    @media (min-width: 992px) {
-        .hero .hero-content { padding: 4rem 1rem; }
-        .hero-img { height: 60vh; margin: 0; }
-        .hero h1 { font-size: 3rem; }
-    }
-
-    /* keep a small consistent gap on mobile */
-    main { padding-top: 20px; }
-
-
-/* Emergency help section styles */
-.emergency-help-header {
-    font-family: var(--font-primary);
-    font-weight: 800;
-    font-size: 2rem;
-    margin: 0.5rem 0;
-    color: var(--accent-color);
-    text-align: center;
-
-}
-
-.emergency-help-subheader {
-    font-family: var(--font-secondary);
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin: 0.25rem 0;
-    color: var(--accent-color);
-    text-align: center;
-}
-
-/* Emergency help text */
-.emergency-help-text {
-    font-family: var(--font-tertiary);
-    font-size: 1rem;
-    margin: 0.5rem 0;
-    color: var(--text-color);
-    text-align: center;
-}
-
-/* Coral container box: background coral with yellow text */
-.coral-box {
-    background-color:  #FF6B6B; /* CSS keyword coral (#FF7F50) */
-    color: rgb(255, 213, 0); /* text color */
-
-    padding: 1.25rem 1.5rem;
-    border-radius: 0.5rem;
-    max-width: 1100px;
-    margin: 1rem auto;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-
-.coral-box h1,
-.coral-box h2,
-.coral-box h3,
-.coral-box a {
-    color: inherit; /* keep yellow text for headings/links */
-}
-
-.coral-box h4 { 
-    color:white;
-}
-
-.coral-box a {
-    text-decoration: underline;
-}
-
-/* Optional utility for smaller, denser coral boxes */
-.coral-box--small { padding: 0.75rem 1rem; }
-
-/* card styles */
-body {
-    font-family: var(--secondary);
-    background: #F8F9FB;
-    padding:40px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
+/* Cards */
 .card {
     background: white;
     width: 280px;
-        padding: 20px;
-    border-radius: 20px;
+    max-width: 320px;
+    padding: 20px;
+    border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
     gap: 10px;
-    border: 2cap solid #e8eef5;
+    border: 1px solid #e8eef5;
 }
 .card h3 {
-font-size: 1.3rem;
-margin: 0;
-color: #4A6FA5;
+    font-size: 1.3rem;
+    margin: 0;
+    color: #4A6FA5;
 }
 .card p {
-margin: 0;
-line-height: 1.5;
-color: #333;
+    margin: 0;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+.tag {
+    background: #DDE9F8;
+    color: #4A6FA5;
+    font-size: 0.8rem;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 600;
 }
 
-  /* Make cards uniform height across the grid */
-    /* Ensure each column behaves as a flex container so .card.h-100 fills the column */
-    .container .row > [class*="col-"] {
-        display: flex;
-    }
-    
-    .card {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
-    }
-    
-    .card .card-body {
-        flex: 1 1 auto;
-    }
+/* Accordion */
+.accordion-button {
+    background-color: #b7d8ff;
+    color: #003366;
+    font-weight: 600;
+    justify-content: center;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.accordion-button::after {
+    position: absolute;
+    right: 1rem;
+}
+.accordion-button:hover {
+    background-color: #a6cfff;
+    color: #00284d;
+}
+.accordion-button:not(.collapsed) {
+    background-color: var(--color-primary);
+    color: #00284d;
+    box-shadow: none;
+}
+.accordion-body {
+    background-color: var(--accent-color);
+    color: #333;
+    border-top: 1px solid #d3c8ff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.accordion-body:hover {
+    background-color: #e0d8ff;
+}
 
-/* Larger-screen spacing for the stacked hero (image above content) */
+/* Emergency Help Section */
+#getemergencyhelpnow {
+    width: 100%;
+}
+#getemergencyhelpnow .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+#getemergencyhelpnow .coral-box {
+    background-color: #FF6B6B; /* coral */
+    color: rgb(255, 213, 0);   /* yellow */
+    padding: 2rem 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    margin: 2rem auto;
+    text-align: center;
+}
+#getemergencyhelpnow .coral-box * {
+    color: rgb(255, 213, 0) !important;
+}
+.emergency-help-header {
+    font-family: var(--font-primary);
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.emergency-help-subheader {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.emergency-help-text {
+    font-family: var(--font-tertiary);
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+#getemergencyhelpnow .coral-box ul {
+    list-style: disc inside;
+    padding-left: 1rem;
+    margin: 1rem 0;
+}
+@media (max-width: 768px) {
+    #getemergencyhelpnow .coral-box {
+        padding: 1.5rem 1rem;
+    }
+    .emergency-help-header {
+        font-size: 1.75rem;
+    }
+    .emergency-help-subheader {
+        font-size: 1.25rem;
+    }
+}
+@media (max-width: 480px) {
+    #getemergencyhelpnow .coral-box {
+        padding: 1rem;
+    }
+    .emergency-help-header {
+        font-size: 1.5rem;
+    }
+    .emergency-help-subheader {
+        font-size: 1.1rem;
+    }
+}
+
+/* Footer */
+footer.footer {
+    width: 100%;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    padding: 1rem 0;
+    box-sizing: border-box;
+}
+footer .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
 @media (min-width: 768px) {
-    /* Keep the inline hero image visible on all sizes.
-       On md+ screens set a responsive height so the image sits below the navbar
-       and scales while preserving aspect ratio using object-fit. */
-    .hero .hero-content { 
-        padding: 3rem 1rem; 
+    footer .footer-inner {
+        flex-direction: row;
     }
-    
-    .hero-img {
-        width: 100%;
-        height: 60vh; /* visible height on md screens */
-        object-fit: cover;
-        display: block;
-        margin: 0;
-    }
+}
+footer.footer a.footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 1rem;
+    transition: color 0.3s;
+}
+footer.footer a.footer-link:hover {
+    color: #5f8fbf;
+}
+footer.footer .footer-copy {
+    color: #ffffff;
 }
 
-/* Danger button override: coral background + yellow text */
+/* Emergency-style danger button */
 .btn-danger {
-    background-color: #FF6B6B !important; /* coral */
-    color: #FFD500 !important; /* yellow */
-    border-color: #e55a5a !important;
+    background-color: #FF6B6B !important; /* same coral as emergency section */
+    color: rgb(255, 213, 0) !important;  /* same yellow text */
+    border-color: #FF6B6B !important;
+    padding: 0.75rem 1.25rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
+
 .btn-danger:hover,
 .btn-danger:focus {
-    background-color: #ff534e !important;
-    color: #FFF200 !important;
-    border-color: #d24b4b !important;
-}
-
-/* Center all text globally, but keep form controls readable (left-aligned) */
-html, body {
-    text-align: center !important;
-}
-
-/* Keep form inputs, textareas and selects left-aligned for usability */
-input, textarea, select, .form-control {
-    text-align: left !important;
-}
-
-/* Media queries */
-
-/* Medium screens: stacked hero spacing and hero image behavior */
-@media (min-width: 768px) {
-    .hero .hero-content {
-        padding: 3rem 1rem;
-    }
-    .hero-img {
-        width: 100%;
-        height: 60vh; /* visible height on md screens */
-        object-fit: cover;
-        display: block;
-        margin: 0;
-    }
-}
-/* Larger screens */
-@media (min-width: 992px) {
-    .hero .hero-content { padding: 4rem 1rem; }
-    .hero-img { height: 60vh; margin: 0; }
-    .hero h1 { font-size: 3rem; }
+    background-color: #e55a5a !important; /* slightly darker coral on hover */
+    color: rgb(255, 213, 0) !important;   /* keep yellow text */
+    border-color: #e55a5a !important;
 }
