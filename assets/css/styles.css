@@ -228,99 +228,34 @@ i.fa-solid, i.fa {
     text-align: center;
   }
 
-/* Make body take full height */
+  /* Make the page allow a sticky footer without altering layout */
 html, body {
   height: 100%;
   margin: 0;
 }
 
-/* Flex container to push footer down */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 70vh;
-}
 
-/* Main content grows to fill available space */
-.content {
+/* Your main/page content grows to fill space */
+main {
   flex: 1;
 }
 
-/* Make body a flex column for sticky footer */
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Main content grows to fill space */
-.content {
-  flex: 1;
-}
-
-/* Footer styling - background extends full width */
+/* Footer stretches full width and sticks to bottom */
 footer.footer {
   width: 100%;
-  background-color: #79a7d3; /* same as navbar */
-  color: #ffffff;
-  padding: 1rem 2rem;
-  
+  background-color: #79a7d3; /* soft blue */
+  padding: 1rem 0;
+  color: #fff;
+  box-sizing: border-box;
 }
 
-/* Footer brand */
-footer.footer .footer-brand {
-  font-weight: bold;
-  font-size: 1.1rem;
+/* Keep your inner content centered but allow full-width background */
+footer .footer-inner {
+  max-width: 1200px;    /* optional: keeps content nicely aligned */
+  margin: 0 auto;       /* centers inner content while bg stays full width */
+  padding: 0 1rem;
 }
 
-/* Footer links */
-footer.footer .footer-links a {
-  color: #ffffff;
-  text-decoration: none;
-  margin-left: 1rem;
-}
-
-footer.footer .footer-links a:hover {
-  text-decoration: underline;
-}
-
-/* Footer copyright */
-footer.footer .footer-copy {
-  text-align: center;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-}
-
-/* Responsive: stack content on small screens */
-@media (max-width: 991px) {
-  footer.footer .footer-inner {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  footer.footer .footer-links {
-    margin-top: 0.5rem;
-  }
-}
-
-
-
-/* Responsive: make sure footer content stacks on small screens */
-@media (max-width: 991px) {
-  footer.footer .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  footer.footer .footer-links {
-    margin-top: 0.5rem;
-  }
-}
 
 /* media queries */
     /* media queary for medium screens: spacing for the stacked hero (image above content) */
