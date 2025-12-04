@@ -18,15 +18,9 @@
     --text-color: #333333 /*darkgray*/;
     --navbar-height: 74px;
     --hero-gap: 1rem;
+}
 
     /*navbar styles*/
-nav {
-    color: white;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1030; /* Ensure navbar is above other content */
-}
 
 .navbar {
     position:fixed;
@@ -37,6 +31,7 @@ nav {
     background-color: #79a7d3; /* soft blue */          
     z-index: 1030; /* Ensure navbar is above other content */
     border-bottom: 2px solid #4A6FA5;
+    color:white
 }
 
 /*create space below navbar*/
@@ -48,7 +43,7 @@ body {
 /*hero image container*/
 .hero {
     width:100%;
-    border-top: 10px solid #4A6FA5;
+    
 }
 
 /*hero image*/
@@ -81,6 +76,18 @@ body {
     color: #f7ad33; /* yellow text */
     }
  
+    /* Add vertical spacing between sections */
+section {
+    padding: 4rem 1rem; /* top and bottom padding */
+}
+
+/* Optional: smaller spacing for mobile screens */
+@media (max-width: 768px) {
+    section {
+        padding: 2rem 1rem;
+    }
+}
+
     /* card styles */
     body {
         font-family: var(--font-tertiary);
@@ -203,6 +210,24 @@ i.fa-solid, i.fa {
   font-family: "Font Awesome 6 Free" !important;
 }
 
+/*bootstrap list*/
+ /* Center the content in list-group-item */
+  .list-group-item {
+    justify-content: center; /* Center horizontally */
+    text-align: center;      /* Center text inside the divs */
+  }
+
+  /* Optional: stack icon above text */
+  .list-group-item .bi {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Center the inner div text */
+  .list-group-item div {
+    text-align: center;
+  }
+/* media queries */
     /* media queary for medium screens: spacing for the stacked hero (image above content) */
     @media (min-width: 768px) {
         .hero .hero-content { padding: 3rem 1rem; }
@@ -221,10 +246,8 @@ i.fa-solid, i.fa {
         .hero h1 { font-size: 3rem; }
     }
 
-    }
-
     /* keep a small consistent gap on mobile */
-    main { padding-top: var(--hero-gap); }
+    main { padding-top: 20px; }
 
 
 /* Emergency help section styles */

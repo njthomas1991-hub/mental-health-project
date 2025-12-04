@@ -24,12 +24,7 @@
       crossorigin="anonymous"
     />
 
-    <!-- Bootstrap JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Bootstrap JS is loaded once at the end of the document to avoid duplicate initialization -->
 
     <!-- Custom CSS (load after Bootstrap) -->
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -47,21 +42,26 @@
       @media (max-width: 991px) {
         nav.navbar .navbar-collapse { background-color: #79a7d3 !important; padding: .5rem 1rem; }
       }
+      /* Push page content below navbar */
+      body {
+    padding-top: 75px; /* same as navbar height */
+}
     </style>
   </head>
 
   <body>
     <header>
      <!--navbar-->
-<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #79a7d3;" data-bs-theme="light">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #79a7d3; position:fixed; top:0; left:0; width:100%; z-index:1030;" data-bs-theme="light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      Calm Cloud</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">Calm Cloud</a>
+   <!--toggle button for mobile-->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+    <div class="navbar-collapse collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link" href="#understanding-emotions">
             <i class="fa-regular fa-face-meh-blank"></i>
@@ -74,24 +74,24 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#buildinghealthyhabits">
+          <a class="nav-link" href="#building-healthy-habits">
             <i class="fa-solid fa-heart-pulse"></i>
             Healthy Habits</a>
         <li class="nav-item">
-          <a class="nav-link" href="#another-section">
+          <a class="nav-link" href="#finding-support">
             <i class="fa-solid fa-phone"></i>
             Finding Support</a>
         </li>
       </ul>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button type="button" class="btn btn-danger btn-lg" href="#getemergencyhelpnow">
+    <button type="button" class="btn btn-danger btn-lg" onclick="location.href='#getemergencyhelpnow'">
       <i class="fa-solid fa-tower-broadcast"></i>
       GET HELP NOW</button>
     </div>
-  </div>
+  </div>  
 </nav>
-    <main style="padding-top:64px;">
+    
 
 <!--hero image-->
 <section id="hero-image" class="hero">
@@ -245,7 +245,7 @@
 
       <!-- coping strategy cards-->
       <section id="managing-anxiety">
-        <h1><i class="fa-solid fa-spa"></i>Managing Anxiety</h1>
+        <h1><i class="fa-solid fa-spa"></i>Managing Stress and Anxiety</h1>
         <div class="container text-center">
           <div class="row align-items-stretch justify-content-center">
             <div class="col-12 col-md-6 col-lg-4">
@@ -338,7 +338,7 @@
 
 
       
-<section id="habits"> <!-- Accordion consolidated -->
+<section id="building-healthy-habits"> <!-- Accordion consolidated -->
   <div class="container">
     <div class="accordion" id="habitAccordion">
 <h1><i class="fa-solid fa-heart-pulse"></i>Building Healthy Habits</h1>
@@ -441,6 +441,245 @@
     </div>
   </div>
 </section>
+
+<section id="finding-support">
+  <div class="container">
+    <h1><i class="fa-solid fa-phone"></i>Finding Support</h1>
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<section class="container py-4">
+  <h2 class="h5 mb-3">Trusted Support Websites</h2>
+<!--mind-->
+<!-- List item with modal trigger button -->
+<div class="list-group">
+
+  <!-- Mind -->
+  <div class="list-group-item d-flex align-items-center">
+    <img src="assets/images/mind.jfif" alt="Mind logo" class="me-3" style="width:64px; height:32px;">
+    <div class="flex-grow-1 text-center">
+      <div class="fw-bold">Mind</div>
+      <small class="text-muted">Information and support for all mental health challenges.</small>
+    </div>
+    <div class="ms-3">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mindModal">
+        Learn More
+      </button>
+    </div>
+  </div>
+
+  <!-- Papyrus -->
+  <div class="list-group-item d-flex align-items-center">
+    <img src="assets/images/papyrus.webp" alt="Papyrus logo" class="me-3" style="width:96px; height:32px;">
+    <div class="flex-grow-1 text-center">
+      <div class="fw-bold">Papyrus (HOPELINE247)</div>
+      <small class="text-muted">Support for young people experiencing suicidal thoughts.</small>
+    </div>
+    <div class="ms-3">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#papyrusModal">
+        Learn More
+      </button>
+    </div>
+  </div>
+
+  <!-- YoungMinds -->
+  <div class="list-group-item d-flex align-items-center">
+    <img src="assets/images/youngminds.jfif" alt="YoungMinds logo" class="me-3" style="width:32px; height:32px;">
+    <div class="flex-grow-1 text-center">
+      <div class="fw-bold">YoungMinds</div>
+      <small class="text-muted">Advice and resources for young people and parents.</small>
+    </div>
+    <div class="ms-3">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#youngmindsModal">
+        Learn More
+      </button>
+    </div>
+  </div>
+
+  <!-- Samaritans -->
+<div class="list-group-item d-flex align-items-center">
+    <img src="assets/images/samaritans.jfif" alt="Samaritans logo" class="me-3" style="width:32px; height:32px;">
+    <div class="flex-grow-1 text-center">
+      <div class="fw-bold">Samaritans</div>
+      <small class="text-muted">Advice and resources for young people and parents.</small>
+    </div>
+    <div class="ms-3">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#samaritansModal">
+        Learn More
+      </button>
+    </div>
+  </div>
+  <!-- Childline -->
+   <div class="list-group-item d-flex align-items-center">
+    <img src="assets/images/childline.jfif" alt="Childline logo" class="me-3" style="width:32px; height:32px;">
+    <div class="flex-grow-1 text-center">
+      <div class="fw-bold">Childline</div>
+      <small class="text-muted">Advice and resources for young people and parents.</small>
+    </div>
+    <div class="ms-3">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#childlineModal">
+        Learn More
+      </button>
+    </div>
+  </div>
+<!-- NHS Mental Health -->
+   <div class="list-group-item d-flex align-items-center">
+    <img src="assets/images/nhs.jfif" alt="NHS Mental Health logo" class="me-3" style="width:32px; height:32px;">
+    <div class="flex-grow-1 text-center">
+      <div class="fw-bold">NHS Mental Health</div>
+      <small class="text-muted">Advice and resources for young people and parents.</small>
+    </div>
+    <div class="ms-3">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nhsModal">
+        Learn More
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modals -->
+
+<!-- Mind Modal -->
+<div class="modal fade" id="mindModal" tabindex="-1" aria-labelledby="mindModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="mindModalLabel">Mind - Mental Health Support</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Mind provides information, advice, and support for anyone experiencing mental health challenges.</p>
+        <ul>
+          <li>Helpline and support services</li>
+          <li>Resources for coping with stress and anxiety</li>
+          <li>Guidance for families and carers</li>
+        </ul>
+        <p>Website: <a href="https://www.mind.org.uk/" target="_blank" rel="noopener">https://www.mind.org.uk/</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Papyrus Modal -->
+<div class="modal fade" id="papyrusModal" tabindex="-1" aria-labelledby="papyrusModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="papyrusModalLabel">Papyrus - HOPELINE247</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Papyrus provides support for young people experiencing suicidal thoughts.</p>
+        <ul>
+          <li>Confidential helpline</li>
+          <li>Support and resources for young people</li>
+        </ul>
+        <p>Website: <a href="https://www.papyrus-uk.org/" target="_blank" rel="noopener">https://www.papyrus-uk.org/</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- YoungMinds Modal -->
+<div class="modal fade" id="youngmindsModal" tabindex="-1" aria-labelledby="youngmindsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="youngmindsModalLabel">YoungMinds</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>YoungMinds provides advice and resources for young people and parents.</p>
+        <ul>
+          <li>Information on mental health</li>
+          <li>Support for parents and carers</li>
+        </ul>
+        <p>Website: <a href="https://www.youngminds.org.uk/" target="_blank" rel="noopener">https://www.youngminds.org.uk/</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Samaritans Modal -->
+<div class="modal fade" id="samaritansModal" tabindex="-1" aria-labelledby="samaritansModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="samaritansModalLabel">Samaritans</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Samaritans offer 24/7 listening support for anyone struggling emotionally.</p>
+        <ul>
+          <li>Confidential listening</li>
+          <li>Support for emotional crises</li>
+        </ul>
+        <p>Website: <a href="https://www.samaritans.org/" target="_blank" rel="noopener">https://www.samaritans.org/</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Childline Modal -->
+<div class="modal fade" id="childlineModal" tabindex="-1" aria-labelledby="childlineModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="childlineModalLabel">Childline</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Childline offers confidential help for anyone under 19, online or by phone.</p>
+        <ul>
+          <li>Free helpline and online chat</li>
+          <li>Support for children and teens</li>
+        </ul>
+        <p>Website: <a href="https://www.childline.org.uk/" target="_blank" rel="noopener">https://www.childline.org.uk/</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NHS Mental Health Modal -->
+<div class="modal fade" id="nhsModal" tabindex="-1" aria-labelledby="nhsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="nhsModalLabel">NHS Mental Health</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>NHS Mental Health provides official guidance, treatment options, and urgent help.</p>
+        <ul>
+          <li>Official NHS resources</li>
+          <li>Treatment options and guidance</li>
+        </ul>
+        <p>Website: <a href="https://www.nhs.uk/mental-health/" target="_blank" rel="noopener">https://www.nhs.uk/mental-health/</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
     </main>
     <footer>
         <p>&copy; 2024 Sample Page. All rights reserved.</p>
