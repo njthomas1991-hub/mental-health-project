@@ -89,8 +89,9 @@
     </div>
   </div>  
 </nav>
+    </header>
     
-
+<main>
 <!--hero image-->
 <section id="hero-image" class="hero">
   <div class="container">
@@ -134,7 +135,6 @@
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       <!-- understanding emotions-->
@@ -246,7 +246,7 @@
                 <div class="card-body">
                   <i class="fa-solid fa-hand"></i><br>
                   <span class="badge bg-primary mb-2">Relaxation</span>
-                  <h3 class="card-title"></i>Hand Trace Breathing</h3>
+                  <h3 class="card-title">>Hand Trace Breathing</h3>
                   <p class="card-text">
                     Trace up your finger while breathing in, down while
                     breathing out. Repeat across all five fingers for a calming
@@ -275,7 +275,7 @@
                 <div class="card-body">
                   <i class="fa-solid fa-brain"></i><br>
                   <span class="badge bg-primary mb-2">Thinking Skill</span>
-                  <h3 class="card-title"></i>Fact or Fear?</h3>
+                  <h3 class="card-title">Fact or Fear?</h3>
                   <p class="card-text">
                     When a worry appears, ask: “Is this based on facts, or is it
                     fear talking?” Helps bring thoughts into balance.
@@ -288,7 +288,7 @@
               <div class="card h-100">
                 <div class="card-body w-100 justify-content-center">
                   <i class="fa-regular fa-heart"></i><br>
-                  <span class="badge bg-primary mb-2"></i>Self-Care</span>
+                  <span class="badge bg-primary mb-2">Self-Care</span>
                   <h3 class="card-title">Two-Minute Reset</h3>
                   <p class="card-text">
                     Write: “Right now I feel… What I can control today is… One
@@ -302,7 +302,7 @@
               <div class="card h-100">
                 <div class="card-body w-100 justify-content-center">
                   <i class="fa-solid fa-person-walking"></i><br>
-                  <span class="badge bg-primary mb-2"></i>Movement</span>
+                  <span class="badge bg-primary mb-2">Movement</span>
                   <h3 class="card-title">Shake It Out</h3>
                   <p class="card-text">
                     Shake your hands, arms, and legs for 10 seconds to release
@@ -316,7 +316,7 @@
               <div class="card h-100 w-100justify-content-center">
                 <div class="card-body">
                   <i class="fa-solid fa-pencil"></i><br>
-                  <span class="badge bg-primary mb-2"></i>Creative</span>
+                  <span class="badge bg-primary mb-2">Creative</span>
                   <h3 class="card-title">Free Doodle</h3>
                   <p class="card-text">
                     Doodle anything for 2–3 minutes. No rules, no pressure —
@@ -343,7 +343,7 @@
             Daily Mood Support
           </button>
         </h2>
-        <div id="panelDaily" class="accordion-collapse collapse" aria-labelledby="headingDaily"
+        <div id="panelDaily" class="accordion-collapse collapse" role="region" aria-labelledby="headingDaily"
           data-bs-parent="#habitAccordion">
           <div class="accordion-body">
             <ul>
@@ -363,7 +363,7 @@
             Better Sleep Habits
           </button>
         </h2>
-        <div id="panelSleep" class="accordion-collapse collapse" aria-labelledby="headingSleep" data-bs-parent="#habitAccordion">
+        <div id="panelSleep" class="accordion-collapse collapse" role="region" aria-labelledby="headingSleep" data-bs-parent="#habitAccordion">
           <div class="accordion-body">
             <ul>
             <li> Limit screens 30 minutes before bed.</li>
@@ -382,7 +382,7 @@
             Physical Health Habits
           </button>
         </h2>
-        <div id="panelHydration" class="accordion-collapse collapse" aria-labelledby="headingHydration" data-bs-parent="#habitAccordion">
+        <div id="panelHydration" class="accordion-collapse collapse" role="region" aria-labelledby="headingHydration" data-bs-parent="#habitAccordion">
           <div class="accordion-body">
             <ul>
             <li>Drink plenty of water,</li>
@@ -401,7 +401,7 @@
             Connect
           </button>
         </h2>
-        <div id="panelConnect" class="accordion-collapse collapse" aria-labelledby="headingConnect" data-bs-parent="#habitAccordion">
+        <div id="panelConnect" class="accordion-collapse collapse" role="region" aria-labelledby="headingConnect" data-bs-parent="#habitAccordion">
           <div class="accordion-body">
             <ul>
               <li>Talk to someone regularly (friend, family member, teacher).</li>
@@ -420,10 +420,10 @@
             Digital Health Habits
           </button>
         </h2>
-        <div id="panelDigital" class="accordion-collapse collapse" aria-labelledby="headingDigital" data-bs-parent="#habitAccordion">
+        <div id="panelDigital" class="accordion-collapse collapse" role="region" aria-labelledby="headingDigital" data-bs-parent="#habitAccordion">
           <div class="accordion-body">
             <ul>
-            <li></li>Take mini screen breaks.</li>
+            <li>Take mini screen breaks.</li>
             <li>Put your phone on Do Not Disturb before bed or when overwhelmed.</li>
             <li>Notice when scrolling makes you feel worse and take a break.</li>
             <li>Follow accounts that inspire and uplift you.</li>
@@ -442,7 +442,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
-<section class="container py-4">
+<div class="container py-4">
   <h2 class="h5 mb-3">Trusted Support Websites</h2>
 <!--mind-->
 <!-- List item with modal trigger button -->
@@ -534,7 +534,7 @@
 <!-- Modals -->
 
 <!-- Mind Modal -->
-<div class="modal fade" id="mindModal" tabindex="-1" aria-labelledby="mindModalLabel" aria-hidden="true">
+<div class="modal fade" id="mindModal" tabindex="-1" role="dialog" aria-labelledby="mindModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -556,9 +556,11 @@
     </div>
   </div>
 </div>
+</div>
+
 
 <!-- Papyrus Modal -->
-<div class="modal fade" id="papyrusModal" tabindex="-1" aria-labelledby="papyrusModalLabel" aria-hidden="true">
+<div class="modal fade" id="papyrusModal" tabindex="-1" role="dialog" aria-labelledby="papyrusModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -579,9 +581,10 @@
     </div>
   </div>
 </div>
+</div>
 
 <!-- YoungMinds Modal -->
-<div class="modal fade" id="youngmindsModal" tabindex="-1" aria-labelledby="youngmindsModalLabel" aria-hidden="true">
+<div class="modal fade" id="youngmindsModal" tabindex="-1" role="dialog" aria-labelledby="youngmindsModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -604,7 +607,7 @@
 </div>
 
 <!-- Samaritans Modal -->
-<div class="modal fade" id="samaritansModal" tabindex="-1" aria-labelledby="samaritansModalLabel" aria-hidden="true">
+<div class="modal fade" id="samaritansModal" tabindex="-1" role="dialog" aria-labelledby="samaritansModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -627,7 +630,7 @@
 </div>
 
 <!-- Childline Modal -->
-<div class="modal fade" id="childlineModal" tabindex="-1" aria-labelledby="childlineModalLabel" aria-hidden="true">
+<div class="modal fade" id="childlineModal" tabindex="-1" role="dialog" aria-labelledby="childlineModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -650,7 +653,7 @@
 </div>
 
 <!-- NHS Mental Health Modal -->
-<div class="modal fade" id="nhsModal" tabindex="-1" aria-labelledby="nhsModalLabel" aria-hidden="true">
+<div class="modal fade" id="nhsModal" tabindex="-1" role="dialog" aria-labelledby="nhsModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -669,12 +672,16 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
-  </div>
+  <div>
+</div>
 </div>
 </section>
 </main>
-    <footer class="footer">
-    <div class="d-flex justify-content-between align-items-center flex-wrap">
+
+      <!-- Footer -->
+
+<footer class="footer">
+  <div class="d-flex justify-content-between align-items-center flex-wrap">
       <span class="footer-brand">Calm cloud</span>
       <div class="footer-links">
         <a href="#" class="footer-link"><i class="fa-brands fa-instagram"></i>Instagram</a>
